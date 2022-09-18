@@ -1,6 +1,6 @@
 # Homework #1
 
-Deployed site: [https://mcneary.tech/comp584/hw1/]([https://](https://mcneary.tech/comp584/hw1/)
+Deployed site: [https://mcneary.tech/comp584/hw1/](https://mcneary.tech/comp584/hw1/)
 
 **Submission criteria**:
 Create a email page using HTML and CSS
