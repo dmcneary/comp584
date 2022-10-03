@@ -1,0 +1,13 @@
+Pros and Cons - Accessibility Tools
+
+NoCoffee:
+- Pros: Really easy to simulate vision issues and disabilities, with sliders to control effects displayed.
+- Cons: Link in slides goes to 404. 'Flutter' effect is very disorienting! Extension remains active across entire browser window (multiple tabs).
+
+Tota11y:
+- Pros: Works on websites without needing to download extension or embed code! Javascript is awesome. Detailed analysis of issues with suggested solutions.
+- Cons: May not work as intended on Javascript-heavy apps (namespace collisions?), some browsers may disable JS
+
+Silktide:
+- Pros: N/A (request for demo was unanswered)
+- Cons: Not as accessible to use as previous two tools

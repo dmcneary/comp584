@@ -75,14 +75,15 @@
       /* Responsive styles */
     </style>
   </head>
-  <body id="body" style="margin: 0 auto !important; padding: 0 !important">
+  <body id="body" style="margin: 0 !important; padding: 0 !important">
     <table
       border="0"
       cellpadding="0"
       cellspacing="0"
       role="presentation"
-      width="600"
-      align=""center"
+      width="100%"
+      align="center"
+			style="width:100%; text-align: center;"
     >
       <tr>
         <td style="text-align: center;">
@@ -91,38 +92,43 @@
             cellpadding="0"
             cellspacing="0"
             role="presentation"
+						width="600"
             align="center"
             style="text-align: center;
+						width: 100%;
+						max-width: 600px;
+						margin: 0 auto;
+						padding: 16px 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: black;
-            margin: 0px auto;
-            width: 100%;
-            max-width: 600px;"
+            background-color: black;"
           >
             <!-- Logo image -->
             <tr>
-              <td style="display: block; margin: 16px auto; text-align: center;">
+              <td style="text-align: center;">
                 <img
                   src="./assets/images/logo.png"
                   alt="Doom Town logo"
                   width="250"
-                  style="
+                  style="margin: 0 auto;
                     text-align: center;
                     max-width: 100%;
                     min-width: 250px;
-                    width: 100%;
-                  "
+                    width: 100%;"
                 />
               </td>
             </tr>
             <!-- Headline -->
             <tr>
-              <td>
+              <td 
+							style="color: purple; padding: 48px 0; background: #000000 url('assets/images/cropped.jpg'); background-repeat: no-repeat; background-size: cover;"
+							background="assets/images/cropped.jpg"
+							bgcolor="#000000"
+							>
                 <h1
                   style="
                     width: 100%;
-                    color: purple;
-                    margin: 0 auto;
+                    color: rgb(255, 255, 255);
+                    margin: 16px auto;
                     text-align: center;
                   "
                 >
@@ -131,66 +137,71 @@
               </td>
             </tr>
             <!-- Hero Image -->
-            <tr style="margin: 0 auto;">
+            <tr style="text-align: center;">
               <td style="text-align: center;">
                 <img
                   src="./assets/images/hero.png"
                   alt="Wipers band hero"
                   width="600"
-                  style="
-                    width: 100%;
+                  style="width: 100%;
                     margin: 0 auto;
                     text-align: center;
                     display: block;
                     max-width: 100%;
                     min-width: 100px;
-                    width: 100%;
-                  "
+                    width: 100%;"
                 />
               </td>
             </tr>
             <!-- Body copy -->
-            <tr>
-              <td></td>
-              <td style="width: 25%; margin: 0 auto">
-                <p style="color: white; text-align: justify">
-                  Life's so incomplete, out on the street
-                </p>
-              </td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td style="width: 25%; margin: 0 auto">
-                <p style="color: white; text-align: justify">
-                  Nothing will ever change, always stay the same
-                </p>
-              </td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td style="width: 25%; margin: 0 auto">
-                <p style="color: white; text-align: justify">
-                  People with blank stares, no one who cares
-                </p>
-              </td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td style="width: 25%; margin: 0 auto">
-                <p style="color: white; text-align: justify">
-                  You can never win, living innocent
-                </p>
-              </td>
-              <td></td>
-            </tr>
+						<tr>
+							<td>
+								<table style="color: #8a388a" cellpadding="16">
+									<tr>
+										<td style="font-size: 200%">W</td>
+										<td style="width: 25%; margin: 0 auto">
+											<p style="color: white; text-align: right">
+												Life's so incomplete, out on the street
+											</p>
+										</td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td style="width: 25%; margin: 0 auto">
+											<p style="color: white; text-align: left">
+												Nothing will ever change, always stay the same
+											</p>
+										</td>
+										<td style="font-size: 200%">I</td>
+										<td style="font-size: 200%">P</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td style="font-size: 200%">E</td>
+										<td style="font-size: 200%">R</td>
+										<td style="width: 25%; margin: 0 auto">
+											<p style="color: white; text-align: right">
+												People with blank stares, no one who cares
+											</p>
+										</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td style="width: 25%; margin: 0 auto">
+											<p style="color: white; text-align: left">
+												You can never win, living innocent
+											</p>
+										</td>
+										<td style="font-size: 200%">S</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+            
             <!-- Button -->
             <tr>
               <td style="margin: 0 auto; text-align: center; width: 100%">
@@ -221,8 +232,8 @@
                   href="https://zenorecords.com/"
                   style="
                     background-color: #800080;
-                    border: 1px solid #70ed45;
-                    border-radius: 3px;
+                    border: 2px solid #70ed45;
+                    border-radius: 10px;
                     color: #ffffff;
                     display: inline-block;
                     font-family: sans-serif;
@@ -244,6 +255,7 @@
             <tr>
               <td
                 style="
+									padding:16px 0;
                   width: 100%;
                   margin: 0 auto;
                   text-align: center;
