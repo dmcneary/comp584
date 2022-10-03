@@ -1,6 +1,6 @@
 # Homework #2
 
-Deployed site: [https://mcneary.tech/comp584/hw1/](https://mcneary.tech/comp584/hw1/)
+Deployed site: [https://mcneary.tech/comp584/hw1/](https://mcneary.tech/comp584/hw2/)
 
 **Submission criteria**:
 - Add a button to your email. Explore the different approaches and see which fits best for your design. 
