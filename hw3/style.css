@@ -1,0 +1,192 @@
+/* Border box declaration 
+https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+html {
+  box-sizing: border-box;
+}
+/* inherit border-box on all elements in the universe and before and after
+ */
+*, 
+*:before, 
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+	font-family: Arial, Geneva, sans-serif;
+}
+
+a {
+	color: #2772B0;
+}
+
+.wrapper {
+	width: 97%;
+	max-width: 1200px;
+	margin: 0 auto;
+	float: none;
+	background-color: #fff;
+}
+
+div img {
+	width: 100%;
+	max-width: 225px; 
+}
+
+.model-variation-desc {
+	font-weight: 800;
+}
+
+article img {
+	display: block;
+	margin: 0 auto;
+}
+
+article {
+	padding: 1rem;
+}
+
+/* grid system -- mobile first! */
+/* flex contatiner */
+
+.row {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+#row-1 {
+	align-items: stretch;
+}
+
+/* attribute selector to give some margin between columns and apply styles to flex items */
+
+[class*="col-"] {
+	margin-left: 4%;
+	flex: 0 0 92%;
+}
+
+/* Add background colors to see how much space each column is taking */
+
+.col-1 {
+	background-color: #A3CDD9;
+}
+
+.col-2 {
+	background-color: #FFFCE6;
+}
+
+.col-3 {
+	background-color: #F2CC39;
+}
+
+.col-4 {
+	background-color: #C2B8AD;
+}
+
+.gear-col {
+	flex: 0 0 100%;
+	height: 20vh;
+}
+
+.gear-col h3 {
+	background-color: black;
+	color: white;
+	opacity: 0.8;
+	text-align: end;
+}
+
+.gear-col a {
+	color: white;
+}
+
+.gear-col a:hover {
+	text-decoration: dotted;
+	color: cadetblue;
+}
+
+#row-6 div {
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#row-6 div:nth-child(1) {
+	background-image: url('./assets/images/SpideRing.webp');
+}
+
+#row-6 div:nth-child(2) {
+	background-image: url('./assets/images/Wheels.webp');
+}
+
+#row-6 div:nth-child(3) {
+	background-image: url('./assets/images/Tools.webp');
+}
+
+#row-6 div:nth-child(4) {
+	background-image: url('./assets/images/Lefty.webp');
+}
+
+#row-6 div:nth-child(5) {
+	background-image: url('./assets/images/Helmet.webp');
+}
+
+/* Tablet Landscape Screen Sizes */
+@media only screen and (min-width: 480px)  {
+	
+	#row-3 > .col-1 {
+		flex: 0 0 92%;
+	}
+
+  .col-1,
+  .col-2 {
+		flex: 0 0 44%;
+	}
+  
+  .col-3, .col-4 {
+		flex: 0 0 92%;
+	}
+
+	#row-5 > .col-2 {
+		order: -1;
+		flex: 0 0 92%;
+	}
+	.gear-col {
+		flex: 0 0 50%;
+	}
+
+	#row-6 div:nth-child(3) {
+		height: 40vh;
+		flex: 0 0 100%
+	}
+
+
+}
+/* Desktop screen Sizes */
+@media only screen and (min-width: 768px) {
+  
+ 	.col-1, #row-3 > .col-1 {
+		flex: 0 0 20%;
+	}
+  
+	.col-2 {
+		flex: 0 0 44%;
+	}
+
+	#row-5 > .col-2 {
+		order: 0;
+		flex: 0 0 44%;
+	}
+
+	.col-3 {
+		flex: 0 0 68%;
+	}
+
+	.col-4 {
+		flex: 0 0 92%;
+	}
+
+	.gear-col, #row-6 div:nth-child(3) {
+		flex: 0 0 20%;
+		height: 20vh;
+	}
+
+}
