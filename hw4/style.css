@@ -25,11 +25,9 @@ a {
 	margin: 0 auto;
 	float: none;
 	background-color: #fff;
-}
-
-div img {
-	width: 100%;
-	max-width: 225px; 
+	display: grid;
+	gap: 2rem;
+	grid-template-columns: 1fr;
 }
 
 .model-variation-desc {
@@ -37,6 +35,8 @@ div img {
 }
 
 article img {
+	width: 100%;
+	max-width: 225px;
 	display: block;
 	margin: 0 auto;
 }
@@ -46,11 +46,6 @@ article {
 }
 
 /* grid system -- mobile first! */
-.wrapper {
-	display: grid;
-	gap: 2rem;
-	grid-template-columns: 1fr;
-}
 
 #row-1, #row-2, #row-3, #row-4, #row-5, #row-6 {
 	display: grid;
