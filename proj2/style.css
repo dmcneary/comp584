@@ -30,7 +30,7 @@ body {
     justify-content: end;
 }
 
-.calculator-screen .result {
+.calculator-screen #result {
     display: inline-flex;
     align-items: center;
 }
@@ -38,7 +38,7 @@ body {
 .result span {
     padding-right: 0.5rem;
     font-size: 2rem;
-    font-family: "LCD", Courier;
+    font-family: "LED Digital 7", Courier;
     color: #fff;
 }
 
