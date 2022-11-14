@@ -1,12 +1,14 @@
-!function() {
-    
+!function () {
+
     const buttons = document.getElementsByTagName("button");
     const result = document.getElementById("result");
 
     const NUMBERS_REGEX = /[0-9]/;
     const OPERATORS_REGEX = /[\+\-\*\/]/;
 
-    let inputA = "", inputB = "", operator = "";
+    let inputA = "",
+        inputB = "",
+        operator = "";
 
     for (const button of buttons) {
         button.addEventListener("click", (e) => {
@@ -52,7 +54,7 @@
         else inputA += number;
         result.innerText = (inputB) ? inputB : inputA;
     }
-    
+
     const handleOperation = op => {
         if (!inputA) {
             inputA = "0";
@@ -72,7 +74,7 @@
     const solveEquation = () => {
         if (!inputB) return inputA;
         else {
-            switch(operator) {
+            switch (operator) {
                 case "+": return addInputs(inputA, inputB);
                 case "-": return subInputs(inputA, inputB);
                 case "*": return mulInputs(inputA, inputB);
