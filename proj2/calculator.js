@@ -1,8 +1,10 @@
 !function () {
 
+    // assign DOM elements
     const buttons = document.getElementsByTagName("button");
     const result = document.getElementById("result");
 
+    // reg expressions for input filtering
     const NUMBERS_REGEX = /[0-9]/;
     const OPERATORS_REGEX = /[\+\-\*\/]/;
 
@@ -10,6 +12,7 @@
         inputB = "",
         operator = "";
 
+    // assign event listeners to buttons for clicks and key presses
     for (const button of buttons) {
         button.addEventListener("click", (e) => {
             handleInput(e.target.value);
@@ -20,6 +23,7 @@
         })
     }
 
+    // filter input based on type (number, operator, etc)
     const handleInput = value => {
         if (NUMBERS_REGEX.test(value)) {
             handleNumberInput(value);
@@ -45,6 +49,7 @@
         }
     }
 
+    // update inputs and display result
     const handleNumberInput = number => {
         if (operator === "=" || !inputA) {
             operator = "";
@@ -55,6 +60,7 @@
         result.innerText = (inputB) ? inputB : inputA;
     }
 
+    // operator input handler
     const handleOperation = op => {
         if (!inputA) {
             inputA = "0";
@@ -71,6 +77,7 @@
         }
     }
 
+    // perform "a op b" and return result to indexA
     const solveEquation = () => {
         if (!inputB) return inputA;
         else {
@@ -83,6 +90,7 @@
         }
     }
 
+    // operation functions (TODO: fixed JS floating point arithmetic rounding errors)
     const addInputs = (a, b) => parseFloat(a, 10) + parseFloat(b, 10);
     const subInputs = (a, b) => parseFloat(a, 10) - parseFloat(b, 10);
     const mulInputs = (a, b) => parseFloat(a, 10) * parseFloat(b, 10);
@@ -95,6 +103,7 @@
         }
     }
 
+    // reset calculator state
     const clearCalculator = () => {
         inputA = "";
         inputB = "";
@@ -102,6 +111,7 @@
         result.innerText = 0;
     }
 
+    // remove character from end of current input
     const popInput = input => {
         return input.substring(0, input.length - 1);
     }
