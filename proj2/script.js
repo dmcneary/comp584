@@ -3,61 +3,105 @@
     const buttons = document.getElementsByTagName("button");
     const result = document.getElementById("result");
 
-    let currentInput = "";
-    let equationArray = [];
+    const NUMBERS_REGEX = /[0-9]/;
+    const OPERATORS_REGEX = /[\+\-\*\/]/;
+
+    let inputA = "", inputB = "", operator = "";
 
     for (const button of buttons) {
         button.addEventListener("click", (e) => {
-            handleButtonClick(e.target.value);
+            handleInput(e.target.value);
         })
 
         button.addEventListener("keydown", (e) => {
-            handleKeyDown(e.key);
+            handleInput(e.key);
         })
     }
 
-    const handleButtonClick = value => {
-        if (value.test(/[0-9]/)) {
-            currentInput += handleNumberInput(value);
+    const handleInput = value => {
+        if (NUMBERS_REGEX.test(value)) {
+            handleNumberInput(value);
+        } else if (OPERATORS_REGEX.test(value)) {
+            handleOperation(value);
+        } else if (value === "Clear") {
+            clearCalculator();
+        } else if (value === "Backspace") {
+            if (inputB) {
+                inputB = popInput(inputB);
+                result.innerText = inputB;
+            } else {
+                inputA = popInput(inputA);
+                result.innerText = inputA;
+            }
+        } else if (value === "=" || value === "Enter") {
+            inputA = solveEquation();
+            inputB = "";
+            operator = "=";
+            result.innerText = inputA;
         } else {
-            handleOperation(value)
-        }
-    }
-
-    const handleKeyDown = e => {
-        //todo: add backspace key
-        if (value.test(/[0-9]/)) {
-            currentInput += handleNumberInput(value);
-        } else {
-            handleOperation(value)
+            return;
         }
     }
 
     const handleNumberInput = number => {
-        return (!currentInput) ? 
-            (number !== "0") ? 
-                number : 
-                "" :
-            number;
+        if (operator === "=" || !inputA) {
+            operator = "";
+            inputA = number;
+        }
+        else if (operator) inputB += number;
+        else inputA += number;
+        result.innerText = (inputB) ? inputB : inputA;
     }
     
     const handleOperation = op => {
-        if (op === "b") {
-            currentInput = currentInput.substring(0, currentInput.length - 1);
-        } else if (op === "c") {
-            currentInput = "";
-        } else if (op ==="=") {
-            solveEquation(currentInput)
+        if (!inputA) {
+            inputA = "0";
+            operator = op;
+        } else if (inputA && operator) {
+            operator = op;
+        } else if (inputB) {
+            inputA = solveEquation();
+            inputB = "";
+            result.innerText = inputA;
+            operator = op
         } else {
-            currentInput += (currentInput) ? 
-                (currentInput.charAt(currentInput.length - 1).test(/[0-9]/)) ? 
-                    op :
-                    currentInput.substring(0, currentInput.length - 1) + op :
-                "0" + op;
+            operator = op;
         }
     }
 
+    const solveEquation = () => {
+        if (!inputB) return inputA;
+        else {
+            switch(operator) {
+                case "+": return addInputs(inputA, inputB);
+                case "-": return subInputs(inputA, inputB);
+                case "*": return mulInputs(inputA, inputB);
+                case "/": return divInputs(inputA, inputB);
+            }
+        }
+    }
 
-    
+    const addInputs = (a, b) => parseFloat(a, 10) + parseFloat(b, 10);
+    const subInputs = (a, b) => parseFloat(a, 10) - parseFloat(b, 10);
+    const mulInputs = (a, b) => parseFloat(a, 10) * parseFloat(b, 10);
+    const divInputs = (a, b) => {
+        if (b !== "0") {
+            return parseFloat(a, 10) / parseFloat(b, 10);
+        } else {
+            alert("ERROR: Divide by zero - clearing...");
+            clearCalculator();
+        }
+    }
+
+    const clearCalculator = () => {
+        inputA = "";
+        inputB = "";
+        operator = "";
+        result.innerText = 0;
+    }
+
+    const popInput = input => {
+        return input.substring(0, input.length - 1);
+    }
 
 }();

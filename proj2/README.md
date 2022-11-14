@@ -1,6 +1,6 @@
-# Homework #5
+# Project #2
 
-Deployed site: [https://mcneary.tech/comp584/hw5/](https://mcneary.tech/comp584/hw5/)
+Deployed site: [https://mcneary.tech/comp584/proj2/](https://mcneary.tech/comp584/proj2/)
 
 **Submission criteria**:
 Match your layout as close to the screenshot as possible using the CSS properties discussed and also researching MDN for new properties if needed. 
