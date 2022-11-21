@@ -1,4 +1,3 @@
-const { tween } = window.popmotion;
 const TOPICS = ["LOL", "OMG", "LMAO", "G2G", "BRB", "XOXO", "FYI", "MFW", "ILY", "IDC"];
 
 TOPICS.forEach(el => {
