@@ -28,13 +28,13 @@ const searchGiphy = term => {
             gifDiv.append(para);
             gifDiv.append(topicImage);
             gifDiv.addClass("d-inline-block mx-3");
-            gifDiv.mouseover(function() {
+            topicImage.mouseover(function() {
                 topicImage.animate(
                 {
                     width: "50vw"
                 }, 500);
             });
-            gifDiv.mouseleave(function() {
+            topicImage.mouseleave(function() {
                 topicImage.animate(
                 {
                     width: "20vw"
