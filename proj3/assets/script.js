@@ -31,7 +31,7 @@ const searchGiphy = term => {
             topicImage.mouseover(function() {
                 topicImage.animate(
                 {
-                    width: "50vw"
+                    width: "30vw"
                 }, 500);
             });
             topicImage.mouseleave(function() {
